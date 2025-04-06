@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Educational Video Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Educational Video Generator</h1>
+        <p>Create a simple educational video with a slide and voiceover — just enter your subject and topic.</p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            <label for="domain">Subject Area:</label>
+            <input type="text" id="domain" name="domain" placeholder="e.g., Science, History, Math" required>
+
+            <label for="topic">Topic Name:</label>
+            <input type="text" id="topic" name="topic" placeholder="e.g., Newton’s Laws, World War II" required>
+
+            <button type="submit">Ignite Study Mode</button>
+        </form>
+
+        <footer>
+            <p>Built with ❤️ by</p>
+            <ul>
+                <li>
+                    <a href="https://www.linkedin.com/in/abhinav-dwivedi-0b0b342ab/" target="_blank">Abhinav Dwivedi</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/surbhi-singla-3147722ba/" target="_blank">Surbhi Singla</a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

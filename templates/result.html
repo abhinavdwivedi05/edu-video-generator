@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Video</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Your AI-Generated Educational Video</h2>
+
+        <video controls>
+            <source src="{{ url_for('static', filename='outputs/' + video_file) }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h3>Slide Image:</h3>
+        <img src="{{ url_for('static', filename='outputs/' + image_file) }}" alt="Slide">
+
+        <h3>Listen to Audio:</h3>
+        <audio controls>
+            <source src="{{ url_for('static', filename='outputs/' + audio_file) }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Download Files:</h3>
+        <ul>
+            <li><a href="{{ url_for('static', filename='outputs/' + video_file) }}" download>Download Video</a></li>
+            <li><a href="{{ url_for('static', filename='outputs/' + image_file) }}" download>Download Slide</a></li>
+            <li><a href="{{ url_for('static', filename='outputs/' + audio_file) }}" download>Download Audio</a></li>
+        </ul>
+
+        <a href="/" class="button">← Generate Another</a>
+    </div>
+</body>
+</html>
